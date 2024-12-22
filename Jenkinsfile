@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/Hari-000/BoardGame.git'
+                git branch: 'prod', credentialsId: 'git-cred', url: 'https://github.com/Hari-000/BoardGame.git'
             }
         }
         stage('Versioning') {
