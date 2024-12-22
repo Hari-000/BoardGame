@@ -6,7 +6,7 @@ pipeline {
     }
     environment {
         SCANNER_HOME = tool 'sonar'
-        DOCKER_IMAGE = "bkrraj/boardshack:${env.BUILD_NUMBER}" // Image name with versioning
+        DOCKER_IMAGE = "hari0000/boardshack:${env.BUILD_NUMBER}" // Image name with versioning
     }
     stages {
         stage('Git Checkout') {
@@ -48,7 +48,7 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+                    waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
                 }
             }
         }
